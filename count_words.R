@@ -29,7 +29,7 @@ count_words<-function(mypdf,numbers_are_words=TRUE) {
     if (x %>% length>0) {
       x<-x %>% strsplit(.," ") %>% unlist %>%
         data.frame(word=.) %>% filter(.!="") %>% mutate(word_length=sapply(word,nchar)) %>% 
-        filter(word_length>1&word!="a") %>% dplyr::select(word)
+        filter(word_length>1&!word%in%c("A","a","I")) %>% dplyr::select(word)
     }
     
     return(x)
