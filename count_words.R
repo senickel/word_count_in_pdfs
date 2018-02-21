@@ -1,6 +1,7 @@
 # mypdf = string, path to pdf document
 # numbers_are_words = are numbers constituting words? Default is Yes.
 # words split over lines are merged
+# a word is an alpha(-numeric) character separated by white spaces with a minimum length of 2 except for the letter 'a'
 
 count_words<-function(mypdf,numbers_are_words=TRUE) {
   if(!"dplyr" %in% (.packages())) stop("Please attach package dplyr.")
