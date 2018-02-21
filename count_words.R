@@ -8,7 +8,7 @@ count_words<-function(mypdf,numbers_are_words=TRUE) {
   
   on.exit(options(options("stringsAsFactors")))
   options(stringsAsFactors = FALSE)
-  pdf2<-pdftools::pdf_text(pdf)
+  pdf2<-pdftools::pdf_text(mypdf)
   
   lapply(1:length(pdf2),function(x1) {
     x<-pdf2[x1] %>% strsplit(.," ") %>% unlist
